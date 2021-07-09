@@ -28,13 +28,13 @@ function checkDisk() {
 
   # check available space
   availableSpace=$(df -Th "$1" | awk '{print$5}' | sed -n '2p' | sed 's/.$//')
-  if [ "$availableSpace" -lt 500 ]; then
+  if [ "$availableSpace" -lt 1024 ]; then
     echo -e "\\033[31mDisk space is too small, it is recommended to use more than 1TB partition \033[0m"
   else
     echo "You have about ${availableSpace} gigabytes of space"
   fi
 
-  # check write/read speed
+  # check write/read speed. need todo
 
 }
 
@@ -47,10 +47,12 @@ function checkRam() {
 }
 
 function checkProcessor() {
+  # need todo
   sleep 1
 }
 
 function checkNetwork() {
+  # need todo
   sleep 1
 }
 
