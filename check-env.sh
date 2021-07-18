@@ -51,7 +51,7 @@ function checkRam() {
 }
 
 function checkProcessor() {
-  if grep sha_ni /proc/cpuinfo; then
+  if grep sha_ni /proc/cpuinfo >> /dev/null; then
     echo "cpu support sha extension"
   else
     echo -e "\033[33m cpu do not support sha extension \033[0m" # yellow font
